@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InkPulse — Custom Tattoo Studio</title>
+<meta name="description" content="InkPulse is an independent tattoo studio for custom designs by experienced artists. Your skin. Your story.">
+<meta property="og:title" content="InkPulse — Your skin. Your story.">
+<meta property="og:description" content="Custom tattoos. Distinctive artists. Art that stays with you.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0B0C;--bg2:#141416;--sf:#1C1C20;--tx:#F3F0EB;--mu:#96949A;--ac:#C7FF3D;--ln:rgba(243,240,235,.12);--pad:clamp(20px,4vw,56px);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.sg{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.sm{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.sm b{color:var(--ac);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:#0B0B0C;font:600 13px "Space Grotesk";letter-spacing:.1em;padding:16px 26px;border:0;cursor:pointer;min-height:48px;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--tx)}
+.lnk{font:600 13px "Space Grotesk";letter-spacing:.1em;border-bottom:1px solid var(--ln);padding:6px 0;transition:border-color .2s,color .2s}
+.lnk:hover{color:var(--ac);border-color:var(--ac)}
+header{position:fixed;inset:env(safe-area-inset-top,0px) 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+header.s{background:rgba(11,11,12,.92);border-color:var(--ln)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.logo{font:700 20px "Space Grotesk";letter-spacing:-.02em}.logo sup{font-size:9px;color:var(--ac)}
+nav{display:flex;gap:30px}nav a{font-size:13px;color:var(--mu);transition:color .2s}nav a:hover{color:var(--tx)}
+.burger{display:none;background:0;border:1px solid var(--ln);color:var(--tx);width:48px;height:48px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:5px auto;transition:transform .3s,opacity .3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+section{padding:clamp(72px,11vw,150px) var(--pad);position:relative}
+.hero{min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:end;padding-top:120px;overflow:hidden}
+.hero h1{font-size:clamp(52px,10.5vw,176px);margin:28px 0}
+.hero h1 span{display:block;overflow:hidden}.hero h1 i{display:block;font-style:normal;animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;-webkit-text-stroke:2px var(--tx);color:transparent}
+@keyframes up{from{transform:translateY(105%)}}
+.hero p{max-width:34ch;color:var(--mu);font-size:18px;margin:0 0 36px}
+.acts{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.art{position:relative;margin-right:calc(var(--pad)*-1);align-self:stretch;min-height:420px;background:var(--sf);border-left:1px solid var(--ln);display:grid;place-items:center;overflow:hidden}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.06),rgba(11,11,12,.5));pointer-events:none}
+.art .sm{z-index:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.art .sm{position:absolute;left:18px;bottom:16px}.art .sm+.sm{left:auto;right:18px;top:96px;bottom:auto}
+.mq{border-block:1px solid var(--ln);overflow:hidden;padding:22px 0;white-space:nowrap;background:var(--bg2)}
+.mq div{display:inline-flex;animation:mq 32s linear infinite}
+.mq span{font:700 clamp(32px,5vw,64px) "Space Grotesk";letter-spacing:-.03em;padding-right:.5em}
+.mq span:nth-child(even){color:var(--ac)}.mq span:nth-child(3n){-webkit-text-stroke:1px var(--tx);color:transparent}
+@keyframes mq{to{transform:translateX(-50%)}}
+.num{font:700 clamp(80px,14vw,200px)/.8 "Space Grotesk";color:transparent;-webkit-text-stroke:1px var(--ln);position:absolute;right:var(--pad);top:40px;pointer-events:none}
+h2{font-size:clamp(38px,6.4vw,100px);margin:20px 0 40px;max-width:14ch}
+.studio{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.studio .t{grid-column:1/8}.studio p{max-width:52ch;color:var(--mu)}
+.studio .f{grid-column:8/13;display:grid;gap:16px;align-self:end}
+.fig{background:var(--sf);border:1px solid var(--ln);overflow:hidden;position:relative}
+.fig img{width:100%;height:100%;display:block;object-fit:cover}
+.fig figcaption{position:absolute;left:12px;bottom:10px}
+.facts{grid-column:1/13;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln);margin-top:40px}
+.facts div{padding:24px 24px 0 0}.facts h3{font-size:24px;margin-bottom:8px}.facts p{margin:0;font-size:14px}
+.art-s{background:var(--bg2)}
+.team{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.mst{display:flex;flex-direction:column;gap:14px}
+.mst:nth-child(1){grid-column:1/6}.mst:nth-child(2){grid-column:6/9;margin-bottom:80px}.mst:nth-child(3){grid-column:9/13}.mst:nth-child(4){grid-column:2/6}
+.mst .fig{aspect-ratio:4/5}.mst:nth-child(2) .fig{aspect-ratio:1}.mst:nth-child(4) .fig{aspect-ratio:16/10}
+.mst h3{font-size:30px}.mst p{margin:0;font-size:14px;color:var(--mu);max-width:36ch}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.fl button{background:0;border:1px solid var(--ln);color:var(--mu);font:500 12px Inter;letter-spacing:.1em;text-transform:uppercase;padding:0 18px;min-height:44px;cursor:pointer;transition:.2s}
+.fl button:hover{color:var(--tx)}.fl button[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#0B0B0C}
+.gal{columns:3 260px;column-gap:16px}
+.w{break-inside:avoid;margin:0 0 16px;display:block;width:100%;padding:0;border:1px solid var(--ln);background:var(--sf);cursor:zoom-in;position:relative;overflow:hidden;color:var(--tx)}
+.w img{display:block;width:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.w:hover img,.w:focus-visible img{transform:scale(1.07)}
+.w .c{position:absolute;inset:auto 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(11,11,12,.92));text-align:left;opacity:0;transform:translateY(8px);transition:.35s}
+.w:hover .c,.w:focus-visible .c{opacity:1;transform:none}
+.w[hidden]{display:none}
+.c b{font:600 18px "Space Grotesk";display:block}
+dialog{border:1px solid var(--ln);background:var(--bg);color:var(--tx);padding:0;max-width:min(92vw,680px);width:100%}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+dialog img{display:block;width:100%;max-height:70vh;object-fit:contain;background:var(--sf)}
+dialog div{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+dialog button{background:0;border:1px solid var(--ln);color:var(--tx);min-height:44px;padding:0 18px;cursor:pointer}
+.proc{background:var(--bg2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln);margin-bottom:48px}
+.steps li{list-style:none;padding:28px 28px 0 0;border-right:1px solid var(--ln);margin-right:28px}
+.steps li:last-child{border:0}
+.steps b{font:700 clamp(64px,9vw,128px)/1 "Space Grotesk";color:var(--ac);display:block;letter-spacing:-.05em}
+.steps h3{font-size:26px;margin:12px 0}.steps p{color:var(--mu);margin:0;max-width:30ch}.steps{padding:0;margin-top:0}
+.cta{text-align:left;overflow:hidden;background:var(--ac);color:#0B0B0C}
+.cta h2{font-size:clamp(44px,10vw,170px);max-width:none;margin:0 0 40px}
+.cta .btn{background:#0B0B0C;color:var(--ac)}.cta .btn:hover{box-shadow:3px 3px 0 #0B0B0C}
+.cta .sm{color:#0B0B0C}
+.ct{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px)}
+.ct dl{margin:32px 0;display:grid;gap:18px}.ct dt{margin-bottom:2px}.ct dd{margin:0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+label.fw,.fw{grid-column:1/-1}
+input,select,textarea{background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:16px Inter;padding:14px;min-height:48px;width:100%;border-radius:0;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac)}
+input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff6b5e}
+.er{color:#ff8a7e;text-transform:none;letter-spacing:0;font-size:13px;min-height:0}
+.ck{display:flex;gap:12px;text-transform:none;letter-spacing:0;font-size:13px;align-items:flex-start}.ck input{width:22px;min-height:22px;margin-top:2px;accent-color:var(--ac)}
+#ok{grid-column:1/-1;border:1px solid var(--ac);padding:20px;display:none}#ok.on{display:block}
+footer{border-top:1px solid var(--ln);padding:56px var(--pad) 32px}
+.big{font:700 clamp(56px,16vw,260px)/.85 "Space Grotesk";letter-spacing:-.06em;margin:0 0 40px}.big span{color:var(--ac)}
+.fr{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--mu)}.fr a:hover{color:var(--tx)}.fr nav{gap:20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+nav{position:fixed;inset:0;top:calc(72px + env(safe-area-inset-top,0px));background:var(--bg);flex-direction:column;gap:0;padding:20px var(--pad);transform:translateY(-8px);opacity:0;visibility:hidden;transition:.3s}
+nav.o{opacity:1;visibility:visible;transform:none}nav a{font:600 34px "Space Grotesk";color:var(--tx);padding:16px 0;border-bottom:1px solid var(--ln)}
+.burger{display:block;order:3}header .btn{display:none}
+.hero{grid-template-columns:1fr}.art{min-height:300px;margin:40px calc(var(--pad)*-1) calc(var(--pad)*-1)}.art .sm+.sm{top:auto;bottom:16px}
+.studio .t,.studio .f{grid-column:1/-1}.facts{grid-template-columns:1fr}
+.team{grid-template-columns:1fr 1fr}.mst:nth-child(n){grid-column:auto;margin:0}.mst:nth-child(1){grid-column:1/-1}.mst:nth-child(4){grid-column:1/-1}
+.steps{grid-template-columns:1fr}.steps li{border-right:0;border-bottom:1px solid var(--ln);margin:0 0 24px;padding-bottom:24px}
+.ct{grid-template-columns:1fr}form{grid-template-columns:1fr}.num{top:20px}
+}
+@media(max-width:480px){.team{grid-template-columns:1fr}.hero p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="p1" viewBox="0 0 200 250"><g fill="none" stroke="currentColor" stroke-width="3"><circle cx="100" cy="125" r="80"/><circle cx="100" cy="125" r="50"/><path d="M100 45v160M20 125h160M43 68l114 114M157 68L43 182"/></g><circle cx="100" cy="125" r="22" fill="currentColor"/><path d="M100 45a80 80 0 0 1 80 80h-80z" fill="currentColor"/></symbol>
+<symbol id="p2" viewBox="0 0 200 250"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M100 235C90 180 130 150 100 100S110 40 100 15"/><path d="M100 150c-30-5-45-25-45-45 25 0 42 15 45 45zM100 100c30-5 45-22 45-42-25 0-42 14-45 42z"/><circle cx="100" cy="15" r="6"/></g></symbol>
+<symbol id="p3" viewBox="0 0 200 250"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M10 200c30-60 70-60 90 0 20-60 60-60 90 0M10 160c30-60 70-60 90 0 20-60 60-60 90 0M10 120c30-60 70-60 90 0 20-60 60-60 90 0"/><circle cx="150" cy="50" r="26"/></g><circle cx="150" cy="50" r="12" fill="currentColor"/></symbol>
+<symbol id="p4" viewBox="0 0 200 250"><g fill="none" stroke="currentColor"><path d="M15 125C60 60 140 60 185 125 140 190 60 190 15 125z" stroke-width="2"/><circle cx="100" cy="125" r="38" stroke-width="2"/><circle cx="100" cy="125" r="16" fill="currentColor"/><path d="M30 118c20-35 60-48 90-44M40 134c25 30 65 40 100 30" stroke-width=".8"/><path d="M60 100l10 8M72 92l8 9M140 96l-9 8M128 90l-6 9" stroke-width="1"/></g></symbol>
+<symbol id="p5" viewBox="0 0 200 250"><g fill="currentColor"><rect x="20" y="30" width="70" height="70"/><circle cx="140" cy="65" r="35" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 230l60-110 60 110z" fill="none" stroke="currentColor" stroke-width="3"/><rect x="130" y="150" width="50" height="14" transform="rotate(-30 155 157)"/></g></symbol>
+<symbol id="p6" viewBox="0 0 200 250"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="100" cy="125" r="14"/><path d="M100 111c-25-40-10-80 0-90 10 10 25 50 0 90zM100 139c25 40 10 80 0 90-10-10-25-50 0-90zM86 125c-40 25-80 10-90 0 10-10 50-25 90 0zM114 125c40-25 80-10 90 0-10 10-50 25-90 0z"/><path d="M90 114c-25-25-50-30-60-20M110 136c25 25 50 30 60 20M110 114c25-25 50-30 60-20M90 136c-25 25-50 30-60 20" stroke-width="1"/></g></symbol>
+</defs></svg>
+
+<header id="hd">
+<a class="logo" href="#top" aria-label="InkPulse home">INKPULSE<sup>®</sup></a>
+<nav id="nav" aria-label="Main"><a href="#studio">Studio</a><a href="#artists">Artists</a><a href="#work">Portfolio</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">BOOK A SESSION</a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="hero">
+<div>
+<p class="sm"><b>01 / INTRODUCTION</b> &nbsp; Independent tattoo studio · Est. 2021</p>
+<h1><span><i>YOUR SKIN.</i></span><span><i>YOUR STORY.</i></span></h1>
+<p>Custom tattoos. Distinctive artists. Art that stays with you.</p>
+<div class="acts"><a class="btn" href="#contact">BOOK YOUR SESSION</a><a class="lnk" href="#work">EXPLORE OUR WORK ↘</a></div>
+</div>
+<div class="art" role="img" aria-label="Tattoo artist working on a custom design"><img src="https://images.pexels.com/photos/4123850/pexels-photo-4123850.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="" fetchpriority="high"><span class="sm">Tattoo in progress</span><span class="sm">Art that stays</span></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div>
+<span>CUSTOM INK —</span><span>PERSONAL STORIES —</span><span>NO COPIES —</span><span>PURE ART —</span>
+<span>CUSTOM INK —</span><span>PERSONAL STORIES —</span><span>NO COPIES —</span><span>PURE ART —</span>
+</div></div>
+
+<section id="studio"><span class="num" aria-hidden="true">01</span>
+<div class="studio">
+<div class="t rv"><p class="sm"><b>01</b> / The studio</p><h2>More than ink. A different kind of expression.</h2>
+<p>InkPulse is a small studio built around one idea: every tattoo is drawn for one person. We start from a conversation, sketch by hand, and refine the design until it fits your body and your story. Clean space, calm pace, careful work.</p></div>
+<div class="f rv"><figure class="fig" style="aspect-ratio:1;margin:0"><img src="https://images.pexels.com/photos/4123826/pexels-photo-4123826.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Tattoo needles and ink prepared for a session" loading="lazy"><figcaption class="sm">Studio setup</figcaption></figure></div>
+<div class="facts rv"><div><h3>Individual designs</h3><p class="sm" style="text-transform:none;letter-spacing:0;font-size:14px">Drawn from scratch, never repeated.</p></div><div><h3>Experienced artists</h3><p class="sm" style="text-transform:none;letter-spacing:0;font-size:14px">Each with a clear specialty.</p></div><div><h3>Personal approach</h3><p class="sm" style="text-transform:none;letter-spacing:0;font-size:14px">One consultation before any needle.</p></div></div>
+</div></section>
+
+<section id="artists" class="art-s"><span class="num" aria-hidden="true">02</span>
+<p class="sm"><b>02</b> / The artists</p><h2>Different hands. Different stories.</h2>
+<div class="team">
+<article class="mst rv"><figure class="fig" style="margin:0"><img src="https://images.pexels.com/photos/4123891/pexels-photo-4123891.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Tattoo artist at work" loading="lazy"></figure><h3>Mara Voss</h3><p class="sm">Blackwork &amp; Geometry</p><p>Heavy contrast and exact lines. Demo bio — replace with the artist’s own.</p><a class="lnk" href="#work" data-f="blackwork" style="align-self:flex-start">VIEW ARTIST</a></article>
+<article class="mst rv"><figure class="fig" style="margin:0"><img src="https://images.pexels.com/photos/4123821/pexels-photo-4123821.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Tattoo artist preparing a machine" loading="lazy"></figure><h3>Lio Hart</h3><p class="sm">Fine line &amp; Minimal</p><p>Quiet, delicate pieces.</p><a class="lnk" href="#work" data-f="fine" style="align-self:flex-start">VIEW ARTIST</a></article>
+<article class="mst rv"><figure class="fig" style="margin:0"><img src="https://images.pexels.com/photos/4123850/pexels-photo-4123850.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Tattoo artist working close to a client's skin" loading="lazy"></figure><h3>Kenji Arai</h3><p class="sm">Japanese &amp; Traditional</p><p>Bold outlines, classic motifs, large-scale flow.</p><a class="lnk" href="#work" data-f="japanese" style="align-self:flex-start">VIEW ARTIST</a></article>
+<article class="mst rv"><figure class="fig" style="margin:0"><img src="https://images.pexels.com/photos/4123902/pexels-photo-4123902.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Client showing a fresh shoulder tattoo" loading="lazy"></figure><h3>Dani Reyes</h3><p class="sm">Realism &amp; Portraits</p><p>Soft shading and lifelike detail.</p><a class="lnk" href="#work" data-f="realism" style="align-self:flex-start">VIEW ARTIST</a></article>
+</div></section>
+
+<section id="work"><span class="num" aria-hidden="true">03</span>
+<p class="sm"><b>03</b> / Selected work</p><h2>Made to be worn. Impossible to copy.</h2>
+<div class="fl" role="group" aria-label="Filter by style" id="fl"></div>
+<div class="gal" id="gal"></div>
+<dialog id="dl" aria-label="Work preview"><img id="dimg" alt="" style="max-height:70vh"><div><span><b class="sg" id="dt" style="font-size:22px"></b><br><span class="sm" id="ds"></span></span><button id="dc">Close</button></div></dialog>
+</section>
+
+<section id="process" class="proc"><span class="num" aria-hidden="true">04</span>
+<p class="sm"><b>04</b> / The process</p><h2>Your idea. Our craft.</h2>
+<ol class="steps">
+<li class="rv"><b>01</b><h3>Tell us your idea.</h3><p>Share your concept, placement and preferred style.</p></li>
+<li class="rv"><b>02</b><h3>Meet your artist.</h3><p>Go through the sketch, details and prep for your session.</p></li>
+<li class="rv"><b>03</b><h3>Make it permanent.</h3><p>Come in at the agreed time and leave with a one-of-one piece.</p></li>
+</ol>
+<a class="btn" href="#contact">START YOUR PROJECT</a></section>
+
+<section class="cta"><p class="sm">Ready when you are</p><h2>GOT AN IDEA? LET’S MAKE IT REAL.</h2><a class="btn" href="#contact">BOOK A SESSION ↗</a></section>
+
+<section id="contact"><span class="num" aria-hidden="true">05</span>
+<p class="sm"><b>05</b> / Find us</p><h2>Come as you are. Leave with a story.</h2>
+<div class="ct"><div>
+<dl><div><dt class="sm">Address (demo)</dt><dd>12 Foundry Lane, Studio 4<br>Your City, 00000</dd></div><div><dt class="sm">Phone (demo)</dt><dd><a href="tel:+10000000000">+1 000 000 0000</a></dd></div><div><dt class="sm">Instagram</dt><dd><a class="lnk" href="https://instagram.com/" target="_blank" rel="noopener">@inkpulse.studio</a></dd></div><div><dt class="sm">Hours (demo)</dt><dd>Tue–Sat 12:00–20:00<br>Sun–Mon closed</dd></div></dl>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=12+Foundry+Lane" target="_blank" rel="noopener">GET DIRECTIONS</a></div>
+<form id="fm" novalidate>
+<label>Name<input name="name" required autocomplete="name"><span class="er"></span></label>
+<label>Email or phone<input name="contact" required autocomplete="email"><span class="er"></span></label>
+<label>Style<select name="style"><option>Not sure yet</option><option>Blackwork</option><option>Fine line</option><option>Japanese</option><option>Realism</option><option>Abstract</option><option>Ornamental</option></select></label>
+<label>Placement<input name="place" placeholder="e.g. forearm"></label>
+<label class="fw">Approx. size<input name="size" placeholder="e.g. 10 × 15 cm"></label>
+<label class="fw">Your idea<textarea name="idea" rows="5" required></textarea><span class="er"></span></label>
+<label class="fw">Reference (optional)<input type="file" accept="image/*" disabled><span class="er" style="color:var(--mu)">File upload needs a server. For now, send references by reply to the email this form opens.</span></label>
+<label class="ck fw"><input type="checkbox" name="ok" required><span>I agree to InkPulse using these details to reply to my request.</span></label>
+<span class="er fw" id="ge"></span>
+<div class="fw"><button class="btn" type="submit">SEND REQUEST</button></div>
+<div id="ok" role="status"></div>
+</form></div></section>
+</main>
+
+<footer>
+<p class="big">INKPULSE<span>®</span></p>
+<div class="fr"><span>Your skin. Your story.</span><nav aria-label="Footer" style="position:static;flex-direction:row;opacity:1;visibility:visible;transform:none;padding:0;background:none;inset:auto"><a href="#studio" style="font:inherit;border:0;padding:0;color:inherit">Studio</a><a href="#work" style="font:inherit;border:0;padding:0;color:inherit">Portfolio</a><a href="#contact" style="font:inherit;border:0;padding:0;color:inherit">Contact</a><a href="https://instagram.com/" target="_blank" rel="noopener" style="font:inherit;border:0;padding:0;color:inherit">Instagram</a></nav><span>Privacy Policy (add link) · © 2026 InkPulse</span></div>
+</footer>
+
+<script>
+const W=[["Orbit","Blackwork","blackwork","4123823"],["Stem","Fine line","fine","4123902"],["Tide","Japanese","japanese","4123903"],["Iris","Realism","realism","4123890"],["Shift","Abstract","abstract","4123850"],["Bloom","Ornamental","ornamental","4123891"],["Wheel","Blackwork","blackwork","4123901"],["Thread","Fine line","fine","4123821"]];
+const F=[["all","All"],["blackwork","Blackwork"],["fine","Fine line"],["japanese","Japanese"],["realism","Realism"],["abstract","Abstract"],["ornamental","Ornamental"]];
+const H=[250,320,280,300,260,340,300,260];
+const g=document.getElementById("gal"),fl=document.getElementById("fl"),dl=document.getElementById("dl");
+g.innerHTML=W.map((w,i)=>`<button class="w" data-k="${w[2]}" data-i="${i}" aria-label="${w[0]}, ${w[1]}, enlarge"><img src="https://images.pexels.com/photos/${w[3]}/pexels-photo-${w[3]}.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="${w[0]} tattoo in ${w[1]} style" loading="lazy" style="aspect-ratio:200/${H[i]}"><span class="c"><b>${w[0]}</b><span class="sm">${w[1]}</span></span></button>`).join("");
+fl.innerHTML=F.map(f=>`<button data-f="${f[0]}" aria-pressed="${f[0]=="all"}">${f[1]}</button>`).join("");
+function filt(k){fl.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f==k));g.querySelectorAll(".w").forEach(w=>w.hidden=!(k=="all"||w.dataset.k==k))}
+fl.onclick=e=>{const b=e.target.closest("button");if(b)filt(b.dataset.f)};
+document.querySelectorAll("[data-f]").forEach(a=>{if(a.tagName=="A")a.addEventListener("click",()=>filt(a.dataset.f))});
+g.onclick=e=>{const b=e.target.closest(".w");if(!b)return;const w=W[b.dataset.i];dimg.src=`https://images.pexels.com/photos/${w[3]}/pexels-photo-${w[3]}.jpeg?auto=compress&cs=tinysrgb&w=1400`;dimg.alt=`${w[0]} tattoo in ${w[1]} style`;dt.textContent=w[0];ds.textContent=w[1];dl.showModal()};
+dc.onclick=()=>dl.close();dl.onclick=e=>{if(e.target==dl)dl.close()};
+const hd=document.getElementById("hd"),bg=document.getElementById("bg"),nav=document.getElementById("nav");
+addEventListener("scroll",()=>hd.classList.toggle("s",scrollY>20),{passive:true});
+bg.onclick=()=>{const o=nav.classList.toggle("o");bg.setAttribute("aria-expanded",o)};
+nav.onclick=e=>{if(e.target.tagName=="A"){nav.classList.remove("o");bg.setAttribute("aria-expanded",false)}};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const fm=document.getElementById("fm");
+fm.onsubmit=e=>{e.preventDefault();let bad=false;
+fm.querySelectorAll("[required]").forEach(f=>{const err=f.parentElement.querySelector(".er");const miss=f.type=="checkbox"?!f.checked:!f.value.trim();f.setAttribute("aria-invalid",miss&&f.type!="checkbox");if(err)err.textContent=miss?"This field is required.":"";if(miss)bad=true});
+const ge=document.getElementById("ge");ge.textContent=bad?"Fill in the highlighted fields and accept the consent box.":"";if(bad)return;
+const d=new FormData(fm),body=["Name: "+d.get("name"),"Contact: "+d.get("contact"),"Style: "+d.get("style"),"Placement: "+d.get("place"),"Size: "+d.get("size"),"","Idea:",d.get("idea")].join("\n");
+const ok=document.getElementById("ok");ok.className="on";
+ok.innerHTML="<b class='sg'>Your email app should open with the request filled in.</b><br><span style='color:var(--mu)'>This demo has no server, so nothing has been sent yet. Press send in your email app to submit it.</span>";
+location.href="mailto:hello@inkpulse.example?subject="+encodeURIComponent("Tattoo request — "+d.get("name"))+"&body="+encodeURIComponent(body)};
+</script>
+</body>
+</html>
